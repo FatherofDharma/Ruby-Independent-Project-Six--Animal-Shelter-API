@@ -7,5 +7,6 @@ class Animal < ApplicationRecord
   validates :breed, presence: true
   validates :content, presence: true
 
+  scope :find_by_name, -> (name) { where("name ILIKE ?", "%#{name}%")}
 
 end

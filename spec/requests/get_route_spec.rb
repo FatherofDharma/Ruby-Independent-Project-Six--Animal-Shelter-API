@@ -30,5 +30,11 @@ describe "get animal by id route", :type => :request do
     expect(JSON.parse(response.body)["id"]).to eq(animal.id)
   end
 
+  it 'returns a an animal by name' do
+    animal = FactoryBot.create(:animal)
+    animal2 = FactoryBot.create(:animal, :name => 'Buddy')
+    get "/v1/animals", params: { :name => "Buddy"}
+    expect(JSON.parse(response.body)[0]["name"]).to eq(animal2.name)
+  end
 
 end
