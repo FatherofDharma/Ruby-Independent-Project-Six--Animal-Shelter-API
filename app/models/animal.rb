@@ -8,5 +8,8 @@ class Animal < ApplicationRecord
   validates :content, presence: true
 
   scope :find_by_name, -> (name) { where("name ILIKE ?", "%#{name}%")}
+# find ranom animal scope solution came from some searching on stack overflow
+# but rails console warns about this syntax being an issue in Rails 6 - Deprecation warning.
+  scope :find_random_animal, -> { select("*").order("RANDOM()").limit(1)}
 
 end

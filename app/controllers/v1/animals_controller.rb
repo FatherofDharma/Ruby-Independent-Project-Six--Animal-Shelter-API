@@ -2,8 +2,12 @@ class V1::AnimalsController < ApplicationController
 
   def index
     name = params[:name]
+    binding.pry
+    # random = params[:random]
     if name
       @animals = Animal.find_by_name(name)
+    # elsif random
+    #   @animals = Animal.find_random_animal(random)
     else
       @animals = Animal.all
     end
@@ -36,6 +40,12 @@ class V1::AnimalsController < ApplicationController
         message: "The animal entry for #{@animal.name} has been successfully removed."
       }
     end
+  end
+
+  def random_animal
+    @animal = Animal.find_random_animal
+    binding.pry
+    json_response(@animal)
   end
 
   private
