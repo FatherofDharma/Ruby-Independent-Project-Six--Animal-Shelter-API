@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :animals
+
+  namespace :v1 do
+    resources :animals
+  end
 end
