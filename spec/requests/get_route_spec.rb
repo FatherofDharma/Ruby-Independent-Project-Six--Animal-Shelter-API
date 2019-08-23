@@ -14,5 +14,21 @@ describe "get all animals route", :type => :request do
   it 'returns status code 200' do
     expect(response).to have_http_status(:success)
   end
+end
+
+describe "get animal by id route", :type => :request do
+  Animal.destroy_all
+
+  it 'returns an error message for invalid id' do
+    get '/v1/animals/0'
+    expect(JSON.parse(response.body)['message']).to eq("Couldn't find Animal with 'id'=0")
+  end
+
+  it 'returns an animal by id route' do
+    animal = FactoryBot.create(:animal)
+    get "/v1/animals/#{animal.id}"
+    expect(JSON.parse(response.body)["id"]).to eq(animal.id)
+  end
+
 
 end
