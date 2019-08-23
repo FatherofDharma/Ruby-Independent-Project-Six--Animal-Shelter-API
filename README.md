@@ -30,6 +30,12 @@ This application is an independent coding project from a Ruby coding class at Ep
 * _Open your preferred web browser and navigate to localhost:3000_
 * _The best way to make an API request will be to use a program such as Postman_
 
+## Routes
+
+| Query | URL | Output|
+| ------- |:------:| ------:|
+|All animals|localhost:3000/v1/animals|A list of all animals in shelter|
+|Specific Animal|localhost:3000/v1/animals/:id|Target animal by id|
 
 ## Specs
 

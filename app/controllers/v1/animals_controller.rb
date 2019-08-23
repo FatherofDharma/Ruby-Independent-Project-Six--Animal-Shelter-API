@@ -2,12 +2,8 @@ class V1::AnimalsController < ApplicationController
 
   def index
     name = params[:name]
-    binding.pry
-    # random = params[:random]
     if name
       @animals = Animal.find_by_name(name)
-    # elsif random
-    #   @animals = Animal.find_random_animal(random)
     else
       @animals = Animal.all
     end
