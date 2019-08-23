@@ -11,4 +11,8 @@ describe "get all animals route", :type => :request do
     expect(JSON.parse(response.body).size).to eq(25)
   end
 
+  it 'returns status code 200' do
+    expect(response).to have_http_status(:success)
+  end
+
 end
