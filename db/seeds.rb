@@ -17,30 +17,30 @@ class Seed
   end
 
   def make_animals_cats
-    type = "Cat"
+    animal_type = "Cat"
     25.times do |i|
       cat = Animal.create!(
         name: Faker::Creature::Cat.name,
-        type: type,
+        animal_type: animal_type,
         age: rand(1..20),
         breed: Faker::Creature::Cat.breed,
         content: Faker::Quote.yoda
       )
-      puts "Cat #{i} name is #{cat.name}, type is #{cat.type}, age is #{cat.age}, breed is #{cat.breed}, and the content is #{cat.content}"
+      puts "Cat #{i} name is #{cat.name}, type is #{cat.animal_type}, age is #{cat.age}, breed is #{cat.breed}, and the content is #{cat.content}"
     end
   end
 
   def make_animals_dogs
-    type = "Dog"
+    animal_type = "Dog"
     25.times do |i|
       dog = Animal.create!(
         name: Faker::Creature::Dog.name,
-        type: type,
+        animal_type: animal_type,
         age: rand(1..20),
         breed: Faker::Creature::Dog.breed,
         content: Faker::Quote.yoda
       )
-      puts "Dog #{i} name is #{dog.name}, type is #{dog.type}, age is #{dog.age}, breed is #{dog.breed}, and the content is #{dog.content}"
+      puts "Dog #{i} name is #{dog.name}, animal type is #{dog.animal_type}, age is #{dog.age}, breed is #{dog.breed}, and the content is #{dog.content}"
     end
   end
 end
