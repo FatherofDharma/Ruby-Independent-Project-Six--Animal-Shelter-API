@@ -6,7 +6,7 @@
 
 ## Description
 
-This application is an independent coding project from a Ruby coding class at Epicodus. This application is intended to demonstrate an understanding of Ruby and the Rails framework. This is a website an online store that carries specialty products.
+This application is an independent coding project from a Ruby coding class at Epicodus. This application is intended to demonstrate an understanding of Ruby and the Rails framework. This an API for an animal shelter, which returns information regarding animals in their database.
 
 ## Setup/Installation Requirements
 
@@ -55,8 +55,10 @@ For Creating or updating Animal objects, the required parameters are:
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-||||
-||||
+| Create an animal object | name: bob, animal_type: dog, age: 5, breed: labrador, content: I like to be pet |  :created and returns the same information |
+| Update an animal object | name: Spike, animal_type: Dog, age: 5, breed: Golden Retriever, content: I like to be pet | The entry for Spike has been updated successfully. |
+| Delete an animal object by id | name: Bob id:57 (other info, etc...) | The animal entry for bob has been successfully removed. |
+| Will not create an Animal object without all parameters required| [All fields blank ]| Validation failed: Name can't be blank, Animal type can't be blank, Age can't be blank, Age is not included in the list, Breed can't be blank, Content can't be blank |
 
 ## Known Bugs
 
