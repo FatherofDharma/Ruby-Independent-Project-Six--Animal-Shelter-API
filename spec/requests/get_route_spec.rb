@@ -40,7 +40,7 @@ describe "get animal by search route", :type => :request do
     expect(JSON.parse(response.body)[0]["name"]).to eq(animal2.name)
   end
 
-  it 'returns animnals by animal type' do
+  it 'returns animals by animal type' do
     animal = FactoryBot.create(:animal)
     animal2 = FactoryBot.create(:animal, :animal_type => 'Cat')
     get "/v1/animals", params: { :animal_type => "Cat"}
