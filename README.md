@@ -35,7 +35,8 @@ This application is an independent coding project from a Ruby coding class at Ep
 | Query | URL | Output|
 | ------- |:------:| ------:|
 |All animals|localhost:3000/v1/animals|A list of all animals in shelter|
-|Specific Animal|localhost:3000/v1/animals/:id|Target animal by id|
+|Specific animal by name|localhost:3000/v1/animals/:id|Target animal by id|
+|Random animal|localhost:3000/random/||
 
 ## Specs
 
