@@ -32,11 +32,21 @@ This application is an independent coding project from a Ruby coding class at Ep
 
 ## Routes
 
-| Query | URL | Output|
-| ------- |:------:| ------:|
-|All animals|localhost:3000/v1/animals|A list of all animals in shelter|
-|Specific animal by name|localhost:3000/v1/animals/:id|Target animal by id|
-|Random animal|localhost:3000/random/||
+For Creating or updating Animal objects, the required parameters are:
+* name
+* animal_type
+* age
+* breed
+* content
+
+| Query | URL | Method | Return |
+| ------- |:------:| ------:| ------:|
+| All Animals | localhost:3000/v1/animals | GET | A list of all animals in shelter |
+| Specific Animal by Id | GET | localhost:3000/v1/animals/:id | Target animal by id |
+| Specific Animal by Name | GET | localhost:3000/v1/animals/?name=Sam | Entry for "Sam" or other name entered |
+| Random Animal | localhost:3000/random/ | GET | Returns one randomly selected animal |
+| Create Animal Entry | localhost:3000/v1/animals | POST | Http status :created |
+| Update Animal Entry | localhost:3000/v1/animals | PUT | The animal entry for [ANIMAL NAME] has been updated successfully. |
 
 ## Specs
 

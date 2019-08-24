@@ -2,8 +2,13 @@ class V1::AnimalsController < ApplicationController
 
   def index
     name = params[:name]
-    if name
+    type = params[:animal_type]
+    if name && type
+      @animals = Animal.find_by_name_type(name, type)
+    elsif name
       @animals = Animal.find_by_name(name)
+    elsif type
+      @animals = Animal.find_by_animal_type(type)
     else
       @animals = Animal.all
     end
