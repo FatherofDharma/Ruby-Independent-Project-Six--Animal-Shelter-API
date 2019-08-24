@@ -33,20 +33,23 @@ This application is an independent coding project from a Ruby coding class at Ep
 ## Routes
 
 For Creating or updating Animal objects, the required parameters are:
-* name
-* animal_type
-* age
-* breed
-* content
+* name (case sensitive for storing but not retrieving)
+* animal_type (Dog, Cat, or other)
+* age ( Range must be from 1-30 years )
+* breed (Specific breed)
+* content (Comments or descriptions)
 
 | Query | URL | Method | Return |
 | ------- |:------:| ------:| ------:|
 | All Animals | localhost:3000/v1/animals | GET | A list of all animals in shelter |
-| Specific Animal by Id | GET | localhost:3000/v1/animals/:id | Target animal by id |
-| Specific Animal by Name | GET | localhost:3000/v1/animals/?name=Sam | Entry for "Sam" or other name entered |
+| Specific Animal by Id | localhost:3000/v1/animals/:id | GET | Target animal by id |
+| Animals by Name | localhost:3000/v1/animals?name=Sam | GET | Entries for "Sam" or other name entered (case insensitive)|
+| Animals by Animal Type | localhost:3000/v1/animals?animal_type=dog | GET | Entries for "dog" or "cat" or other animal_type entered (case insensitive) |
+| Animals by Name and Animal Type | localhost:3000/v1/animals?name=Sam&animal_type=Cat | GET | Entries for "Sam" and "Cat" or other name or animal_type entered (case insensitive) |
 | Random Animal | localhost:3000/random/ | GET | Returns one randomly selected animal |
-| Create Animal Entry | localhost:3000/v1/animals | POST | Http status :created |
-| Update Animal Entry | localhost:3000/v1/animals | PUT | The animal entry for [ANIMAL NAME] has been updated successfully. |
+| Create Animal Entry | localhost:3000/v1/animals/?name=bob&animal_type=cat&age=5&breed=Serrade petit&content=I love to be pet | POST | Http status :created and returns entry including id|
+| Update Animal Entry | localhost:3000/v1/animals/?name=bob&animal_type=cat&age=5&breed=Serrade petit&content=I love to be pet | PUT | The animal entry for [ANIMAL NAME] has been updated successfully. |
+| Delete Animal Entry | localhost:3000/v1/animals/57 | DELETE | The animal entry for bob has been successfully removed. |
 
 ## Specs
 
