@@ -4,11 +4,11 @@ class V1::AnimalsController < ApplicationController
     name = params[:name]
     type = params[:animal_type]
     if name && type
-      @animals = Animal.find_by_name_type!(name, type)
+      @animals = Animal.find_by_name_type(name, type)
     elsif name
-      @animals = Animal.find_by_name!(name)
+      @animals = Animal.find_by_name(name)
     elsif type
-      @animals = Animal.find_by_animal_type!(type)
+      @animals = Animal.find_by_animal_type(type)
     else
       @animals = Animal.all
     end
